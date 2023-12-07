@@ -2,25 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css" />
-    <title>Document</title>
+    <title>Namaste React</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" class="root">
+      <h1>Not Rendered</h1>
+    </div>
 
-    <!-- react library used for dom operations and core react framework file -->
-    <script
-      crossorigin
-      src="https://unpkg.com/react@18/umd/react.development.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-    ></script>
-    <!-- react library used for dom operations and core react framework file end -->
-
-    <!-- first hellow world project in react  -->
-    <script src="./App.js"></script>
+    <script type="module" src="./src/App.js"></script>
   </body>
 </html>

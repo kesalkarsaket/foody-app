@@ -1,16 +1,17 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./src/components/Header";
-import Body from "./src/components/Body";
-import About from "./src/components/About";
-import Contact from "./src/components/Contact";
-import Error from "./src/components/Error";
-import RestaurantMenu from "./src/components/RestaurantMenu";
+import Header from "./components/Header";
+import Body from "./components/Body";
+//import About from "./components/About";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import UserContext from "./src/utils/UserContext";
+import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
-import appStore from "./src/utils/appStore";
-// import Cart from "./src/components/Cart";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
+import Help from "./components/Help";
 
 //import Grocery from "./components/Grocery";
 
@@ -21,9 +22,9 @@ import appStore from "./src/utils/appStore";
 // on demand loading
 // dynamix imoprt
 
-// const Grocery = lazy(() => import("./components/Grocery"));
+const Grocery = lazy(() => import("./components/Grocery"));
 
-// const About = lazy(() => import("./components/About"));
+const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -58,6 +59,7 @@ const appRouter = createBrowserRouter([
         path: "/",
         element: <Body />,
       },
+
       {
         path: "/about",
         element: (
@@ -81,6 +83,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/help",
+        element: <Help />,
       },
       {
         path: "/cart",
